@@ -13,9 +13,9 @@ func _ready():
 	new_ball(ball_1)
 	
 	
-func _process(_delta):		
+func _process(delta):		
 	
-	$AiPaddle.ai_controller(ball_y.position.y)
+	$AiPaddle.ai_controller(delta, ball_y)
 	#print(ball_y.position)
 	reset_ball()
 	
@@ -59,7 +59,7 @@ func new_ball(n_ball):
 	ball_y = n_ball
 	return ball_y
 
-func paddle_ai(n_ball):
+#func paddle_ai(n_ball):
 	# Pull in global variable for y position of instanced ball and apply it to paddle
-	$AiPaddle.position.y = n_ball.position.y 
+	#$AiPaddle.position.y = n_ball.position.y 
 	
